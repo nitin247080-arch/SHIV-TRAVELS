@@ -1,0 +1,19 @@
+# =====================================================================
+# SHIV TRAVELS - Render.com Cloud Deployment Specification (render.yaml)
+# =====================================================================
+# Deploy for FREE on Render.com with automatic HTTPS and custom domains
+# =====================================================================
+
+services:
+  - type: web
+    name: shiv-travels
+    env: docker
+    plan: free
+    region: singapore
+    dockerfilePath: Dockerfile
+    healthCheckPath: /api/stats
+    envVars:
+      - key: PORT
+        value: 8181
+      - key: DB_AUTO_SYNC
+        value: "false"
